@@ -45,6 +45,6 @@ namespace _110321Task
             return user;
         }
 
-        public static string GetFileName(string firstName, string lastName) => $"{firstName}-{lastName}.json";
+        public static string CreateFileName(User user) => $"{user.FirstName}-{user.LastName}-{user.Guid.ToString().Substring(0, 8)}.json";
     }
 }
