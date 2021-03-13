@@ -163,9 +163,15 @@ namespace _110321Task
         {
             _currentUser = UsersListB.SelectedItem as User;
 
-            LoadUserToForm(_currentUser);
-            this.FileNameTxtB.Text = FileHelper.CreateFileName(_currentUser);
-            this.FileNameTxtB.ForeColor = Color.Black;
+            try
+            {
+                LoadUserToForm(_currentUser);
+                this.FileNameTxtB.Text = FileHelper.CreateFileName(_currentUser);
+                this.FileNameTxtB.ForeColor = Color.Black;
+            }
+            catch (Exception exception)
+            {
+            }
             
         }
 
@@ -204,10 +210,11 @@ namespace _110321Task
             try
             {
                 LoadUserToForm(_currentUser);
+                SelectCurrentUser();
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception);
+                
             }
         }
 
